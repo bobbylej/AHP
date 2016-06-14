@@ -1,0 +1,37 @@
+.figure {
+  position: relative;
+  margin: 0;
+  vertical-align: top;
+}
+
+.figure .point {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  margin: 0;
+  background-color: #000;
+  border-radius: 37.5px;
+  box-sizing: border-box;
+  color: #fff;
+  vertical-align: middle;
+  text-align: center;
+  display: table;
+}
+
+.figure .point p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.figure .point.center {
+  left: -webkit-calc(50% - 75px/2);
+  left: calc(50% - 75px/2);
+  top: -webkit-calc(50% - 75px/2);
+  top: calc(50% - 75px/2);
+  background: none;
+}
+
+.figure .point.draggable {
+  background-color: red;
+  opacity: 0.5;
+}

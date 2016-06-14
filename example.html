@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AHP Example</title>
+
+    <link rel="stylesheet" type="text/css" href="ahp.figure.min.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="ahp.js"></script>
+    <script src="ahp.figure.js"></script>
+
+    <style media="screen">
+      .form, #graph {
+        display: inline-block;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <label for="amount">Amount of nodes:</label>
+      <input type="number" name="amount" id="amount" value="3" min="2">
+      <p class="ranking-container">
+        Ranking:
+        <p id="ranking"></p>
+      </p>
+    </div>
+    <div id="graph"></div>
+    <script type="text/javascript">
+      $(function(){
+        $('#amount').change(function() {
+          makeGraph($(this).val());
+        })
+
+        makeGraph($('#amount').val());
+      });
+
+      function makeGraph(amount) {
+        var amount = parseInt(amount);
+        var nodes = []
+        for(var i=0; i<amount; i++) {
+          nodes.push({
+            name: 'node'+i
+          });
+        }
+        $('#graph').graph(nodes, 200, (ranking) => {
+          var rankingString = '';
+          for(var i=0; i<ranking.length; i++) {
+            rankingString += 'node'+i+': '+ranking[i];
+            if(i < ranking.length-1) rankingString += '<br/>';
+          }
+          $('#ranking').html(rankingString);
+        });
+      }
+    </script>
+  </body>
+</html>

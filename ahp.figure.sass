@@ -1,0 +1,42 @@
+$point-size: 75px
+
+.figure
+	position: relative
+	margin: 0
+	vertical-align: top
+
+	.point
+		position: absolute
+		width: $point-size
+		height: $point-size
+		margin: 0
+		//margin-left: -$point-size/2
+		//margin-top: -$point-size/2
+		background-color: #00bcd4
+		border-radius: $point-size/2
+		box-sizing: border-box
+		color: #fff
+		vertical-align: middle
+		text-align: center
+		display: table
+
+		p
+			display: table-cell
+			vertical-align: middle
+
+		&.center
+			left: calc(50% - 75px/2)
+			top: calc(50% - 75px/2)
+			background: none
+
+		&.draggable
+			background-color: red
+			opacity: 0.5
+
+	.radius-bg
+		position: absolute
+		background: linear-gradient(to right, #46eeff, #ecfcff)
+		opacity: 0.5
+		vertical-align: middle
+		left: 50%
+		top: 50%
