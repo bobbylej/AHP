@@ -47,10 +47,8 @@ let ahp = new AHP(relation);
 let ranking = ahp.makeRanking();
 ```
 **Ranking** have ordered by value objects with attributes:
-- **leaf**
   - **node**
   - **value**
-- **status** - it tells if this leaf is OK or BAD
 
 #### Example
 ```js
