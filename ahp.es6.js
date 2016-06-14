@@ -40,7 +40,6 @@ class AHP {
 
   nextNodes(relation, value) {
     let that = this;
-    console.log(relation.node, relation.value, relation.value*value);
     relation.node.children.forEach(function(relation) {
       let newValue = relation.value*value;
       that.nextNodes(relation, newValue);
@@ -85,6 +84,8 @@ class AHP {
     this.leaves.sort(function(a, b) {
       return b.value - a.value;
     });
+    /*
+    // it is for my custom project
     let ranking = [];
     let added = [];
     this.leaves.forEach(function(leaf) {
@@ -102,9 +103,13 @@ class AHP {
       ranking.push({ leaf, status });
     });
     return ranking;
+    */
+    return this.leaves;
   }
 }
 /*
+//Example
+
 let employees = ['P1', 'P2'];
 let criteria = ['Jakość', 'Szybkość', 'Node'];
 let tasks = ['Z1', 'Z2', 'Z3'];

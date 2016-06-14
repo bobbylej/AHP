@@ -45,7 +45,7 @@
             name: 'node'+i
           });
         }
-        $('#graph').graph(nodes, 200, (ranking) => {
+        $('#graph').graph(nodes, 200, function(ranking) {
           var rankingString = '';
           for(var i=0; i<ranking.length; i++) {
             rankingString += 'node'+i+': '+ranking[i];
